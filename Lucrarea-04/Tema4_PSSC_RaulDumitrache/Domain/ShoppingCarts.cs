@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Tema3_PSSC_RaulDumitrache.Domain
+namespace Tema4_PSSC_RaulDumitrache.Domain
 {
     [AsChoice]
     public static partial class ShoppingCarts

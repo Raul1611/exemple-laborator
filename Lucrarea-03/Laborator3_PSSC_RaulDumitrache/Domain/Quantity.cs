@@ -1,7 +1,4 @@
-﻿using LanguageExt;
-using static LanguageExt.Prelude;
-
-namespace Tema3_PSSC_RaulDumitrache.Domain
+﻿namespace Laborator3_PSSC_RaulDumitrache.Domain
 {
     public record Quantity
     {
@@ -24,16 +21,20 @@ namespace Tema3_PSSC_RaulDumitrache.Domain
             return $"{Value}";
         }
 
-        public static Option<Quantity> TryParse(string quantityString)
+        public static bool TryParse(string quantityString, out Quantity quantity)
         {
-            if (int.TryParse(quantityString, out int numericQuantity) && IsValid(numericQuantity))
+            bool isValid = false;
+            quantity = null;
+            if (int.TryParse(quantityString, out int numericQuantity))
             {
-                return Some<Quantity>(new(numericQuantity));
+                if (IsValid(numericQuantity))
+                {
+                    isValid = true;
+                    quantity = new(numericQuantity);
+                }
             }
-            else
-            {
-                return None;
-            }
+
+            return isValid;
         }
 
         private static bool IsValid(int numericQuantity) => numericQuantity > 0;

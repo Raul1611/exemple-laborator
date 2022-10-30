@@ -1,44 +1,45 @@
 ﻿using LanguageExt;
 using static LanguageExt.Prelude;
+
 using System.Text.RegularExpressions;
 
-namespace Tema3_PSSC_RaulDumitrache.Domain
+namespace Tema4_PSSC_RaulDumitrache.Domain
 {
-    public record ProductCode
+    public record Address
     {
         private static readonly Regex ValidPattern = new("^.*$");
 
-        public string Code { get; }
+        public string _address { get; }
 
-        public ProductCode(string value)
+        public Address(string address)
         {
-            if (ValidPattern.IsMatch(value))
+            if (ValidPattern.IsMatch(address))
             {
-                Code = value;
+                _address = address;
             }
             else
             {
-                throw new InvalidProductCodeException("");
+                throw new InvalidAddressException("");
             }
         }
 
         public override string ToString()
         {
-            return Code;
+            return _address;
         }
-
         private static bool IsValid(string stringValue) => ValidPattern.IsMatch(stringValue);
 
-        public static Option<ProductCode> TryParse(string productCodeString)
+        public static Option<Address> TryParse(string addressString)
         {
-            if (IsValid(productCodeString))
+            if (IsValid(addressString))
             {
-                return Some<ProductCode>(new(productCodeString));
+                return Some<Address>(new(addressString));
             }
             else
             {
                 return None;
             }
         }
+
     }
 }

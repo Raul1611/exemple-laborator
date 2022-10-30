@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace Tema3_PSSC_RaulDumitrache.Domain
+namespace Laborator3_PSSC_RaulDumitrache.Domain
 {
         [Serializable]
         internal class InvalidProductCodeException : Exception

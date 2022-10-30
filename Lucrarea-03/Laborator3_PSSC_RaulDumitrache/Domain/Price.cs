@@ -1,12 +1,10 @@
-﻿using LanguageExt;
-using static LanguageExt.Prelude;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tema3_PSSC_RaulDumitrache.Domain
+namespace Laborator3_PSSC_RaulDumitrache.Domain
 {
     public record Price
     {
@@ -37,16 +35,20 @@ namespace Tema3_PSSC_RaulDumitrache.Domain
             return $"{Value:0.##}";
         }
 
-        public static Option<Price> TryParse(string priceString)
+        public static bool TryParse(string priceString, out Price price)
         {
-            if (decimal.TryParse(priceString, out decimal numericPrice) && IsValid(numericPrice))
+            bool isValid = false;
+            price = null;
+            if (decimal.TryParse(priceString, out decimal numericPrice))
             {
-                return Some<Price>(new(numericPrice));
+                if (IsValid(numericPrice))
+                {
+                    isValid = true;
+                    price = new(numericPrice);
+                }
             }
-            else
-            {
-                return None;
-            }
+
+            return isValid;
         }
 
         private static bool IsValid(decimal numericPrice) => numericPrice >= 0;

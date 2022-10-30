@@ -1,9 +1,6 @@
-﻿using LanguageExt;
-using static LanguageExt.Prelude;
+﻿using System.Text.RegularExpressions;
 
-using System.Text.RegularExpressions;
-
-namespace Tema3_PSSC_RaulDumitrache.Domain
+namespace Laborator3_PSSC_RaulDumitrache.Domain
 {
     public record Address
     {
@@ -29,16 +26,16 @@ namespace Tema3_PSSC_RaulDumitrache.Domain
         }
         private static bool IsValid(string stringValue) => ValidPattern.IsMatch(stringValue);
 
-        public static Option<Address> TryParse(string addressString)
+        public static bool TryParse(string addressString, out Address address)
         {
+            bool isValid = false;
+            address = null;
             if (IsValid(addressString))
             {
-                return Some<Address>(new(addressString));
+                isValid = true;
+                address = new(addressString);
             }
-            else
-            {
-                return None;
-            }
+            return isValid;
         }
 
     }

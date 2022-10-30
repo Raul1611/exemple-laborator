@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tema3_PSSC_RaulDumitrache.Domain
+namespace Laborator3_PSSC_RaulDumitrache.Domain
 {
     [AsChoice]
     public static partial class ShoppingCartsPaidEvent

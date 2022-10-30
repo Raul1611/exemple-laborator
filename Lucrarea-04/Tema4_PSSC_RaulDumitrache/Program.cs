@@ -1,11 +1,11 @@
-﻿using Tema3_PSSC_RaulDumitrache.Domain;
+﻿using Tema4_PSSC_RaulDumitrache.Domain;
 using LanguageExt;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using static Tema3_PSSC_RaulDumitrache.Domain.ShoppingCarts;
+using static Tema4_PSSC_RaulDumitrache.Domain.ShoppingCarts;
 
-namespace Tema3_PSSC_RaulDumitrache
+namespace Tema4_PSSC_RaulDumitrache
 {
     class Program
     {

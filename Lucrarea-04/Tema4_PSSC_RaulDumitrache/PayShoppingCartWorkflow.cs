@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static Tema3_PSSC_RaulDumitrache.Domain.ShoppingCartsPaidEvent;
-using static Tema3_PSSC_RaulDumitrache.Domain.ShoppingCarts;
-using static Tema3_PSSC_RaulDumitrache.Domain.ShoppingCartsOperations;
+using static Tema4_PSSC_RaulDumitrache.Domain.ShoppingCartsPaidEvent;
+using static Tema4_PSSC_RaulDumitrache.Domain.ShoppingCarts;
+using static Tema4_PSSC_RaulDumitrache.Domain.ShoppingCartsOperations;
 using LanguageExt;
 
-namespace Tema3_PSSC_RaulDumitrache.Domain
+namespace Tema4_PSSC_RaulDumitrache.Domain
 {
     public class PayShoppingCartWorkflow
     {

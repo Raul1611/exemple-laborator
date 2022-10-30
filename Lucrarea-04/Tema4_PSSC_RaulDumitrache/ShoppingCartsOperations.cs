@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static Tema3_PSSC_RaulDumitrache.Domain.ShoppingCarts;
+using static Tema4_PSSC_RaulDumitrache.Domain.ShoppingCarts;
 
-namespace Tema3_PSSC_RaulDumitrache.Domain
+namespace Tema4_PSSC_RaulDumitrache.Domain
 {
     public static class ShoppingCartsOperations
     {
